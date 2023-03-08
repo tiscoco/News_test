@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NewsAPI_TieasNurA</string>
+    <string name="placeholder_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="placeholder_source">BBC NEWS</string>
 </resources>
