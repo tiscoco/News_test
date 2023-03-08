@@ -1,8 +1,11 @@
 package com.example.newsapi_tieasnura
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.ImageView
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var adapter: NewsAdapter
     private lateinit var recyclerView: RecyclerView
+    lateinit var test: ImageView
 
     private val newslist: ArrayList <NewsModel> = ArrayList<NewsModel>()
 
@@ -26,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         adapter = NewsAdapter(newslist)
         recyclerView = findViewById(R.id.rv_news)
+        test = findViewById(R.id.search_bar)
 
         fetchData()
     }
@@ -51,8 +56,9 @@ class MainActivity : AppCompatActivity() {
                     val source = news.getJSONObject("source")
                     val source_name = source.getString("name")
                     val imageurl = news.getString("urlToImage")
+                    val url_news = news.getString("url")
 
-                    val newsview = NewsModel(title,source_name,imageurl)
+                    val newsview = NewsModel(title,source_name,imageurl,url_news)
 
                     newslist.add(newsview)
 

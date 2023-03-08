@@ -7,6 +7,7 @@
     tools:context=".NewsPage">
 
     <WebView
+        android:id="@+id/news_web"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
